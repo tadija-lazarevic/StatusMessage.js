@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Status message teset</title>
+    <link href="status-message.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<button id="actionBtn" type="button">Click me</button>
+<div id="statusWrapContainer" class="statusWrap"></div>
+
+<div id="container" style="width: 100%"></div>
+</body>
+
+<script type="text/javascript" src="./Utils.js"></script>
+<script type="text/javascript" src="./StatusMessage.js"></script>
+
+<!-- Init script -->
+<script type="text/javascript">
+    /**
+     * @param closeAfter    time for which message will disappear
+     * @param errorMessage  content in message body
+     * @param parent      : id of element on which message is appended
+     * @param type        : type of error, if is it 'error' message will be red, if it is green message will be green
+     * @param onOpen callback function when message becomes visible
+     * @param onClose callback function when message is hidden
+     * @param showOn ID when clicked shows StatusMessage
+     */
+    function showMessage(closeAfter, errorMessage, parent, type, onOpen, onClose, showOn) {
+        var someMessage   = new StatusMessage(),
+            messageConfig = {
+                closeAfter  : closeAfter,
+                errorMessage: errorMessage,
+                parent      : parent,
+                type        : type,
+                onOpen      : onOpen,
+                onClose     : onClose,
+                showOn      : showOn
+            };
+        someMessage.Init(messageConfig);
+    }
+
+    // Add action to button
+    document.getElementById('actionBtn').addEventListener('click', function () {
+        showMessage(null, 'Success!', document.getElementById('container'), 'success', null, null, this);
+    }, false);
+
+
+</script>
+
+</html>

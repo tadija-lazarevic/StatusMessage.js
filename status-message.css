@@ -1,0 +1,57 @@
+/* -----------------------------------------------------------------------------
+
+  ALERT
+
+----------------------------------------------------------------------------- */
+.statusWrap {
+    position: fixed;
+    top: -100px;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    left: 0px;
+    z-index: 9;
+}
+
+.status {
+    /*border: 2px solid;*/
+    height: 50px;
+    margin-top: 0;
+    display: block;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.messageContent {
+    height: 50px;
+    padding: 7px 20px 0 20px;
+}
+
+.error {
+    background-color: #FF4242;
+    color: #fff;
+}
+
+.success {
+    background-color: green;
+    color: #fff;
+}
+
+.statusMenuClose {
+    color: #fff;
+    font-size: 25px;
+    float: right;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+}
+
+.icon-Close-Window:before {
+    content: "\2716";
+    font-style: normal;
+}
